@@ -10,8 +10,8 @@ class MultiQueryAttention(nn.Module):
         self.num_heads = num_heads
         
         self.query_linear = nn.Linear(input_dim, hidden_dim)
-        self.key_linear = nn.Linear(input_dim, hidden_dim)
-        self.value_linear = nn.Linear(input_dim, hidden_dim)
+        self.key_linear = nn.Linear(input_dim, hidden_dim//num_heads)
+        self.value_linear = nn.Linear(input_dim, hidden_dim//num_heads)
         self.output_linear = nn.Linear(hidden_dim, input_dim)
         
     def forward(self, query, key, value, mask=None):
