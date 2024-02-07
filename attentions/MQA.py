@@ -52,8 +52,8 @@ def main():
     # 定义输入张量
     batch_size = 4
     seq_length = 10
-    input_dim = 32
-    hidden_dim = 64
+    input_dim = 256
+    hidden_dim = 512
     num_heads = 8
     
     query = torch.randn(batch_size, seq_length, input_dim)
